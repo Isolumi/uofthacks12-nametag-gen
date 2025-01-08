@@ -208,5 +208,5 @@ for sheet_num in range(num_sheets):
     
     # save each sheet with sequential numbering
     os.makedirs(SHEET_OUTPUT_FOLDER, exist_ok=True)
-    a4_output_path = os.path.join(SHEET_OUTPUT_FOLDER, f'{sheet_num + 1}.png')
+    a4_output_path = os.path.join(SHEET_OUTPUT_FOLDER, f'{sheet_num + 1}.pdf')
     a4_sheet.save(a4_output_path)

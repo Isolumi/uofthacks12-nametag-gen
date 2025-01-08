@@ -1,2 +1,14 @@
 .venv
+templates/
+name_cards_sheet/
 data/
+*.csv
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.ico
+*.webp
