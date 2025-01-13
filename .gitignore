@@ -1,7 +1,5 @@
 .venv
-templates/
 name_cards_sheet/
-fonts/
 data/
 *.csv
 *.pdf

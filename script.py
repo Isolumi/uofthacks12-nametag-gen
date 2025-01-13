@@ -168,7 +168,7 @@ for _, row in data.iterrows():
             draw.text((text_x, y_offset), line, font=fonts[i], fill="black")
             y_offset += line_heights[i] + dy[i]  # move to next line with spacing
 
-    # Scale the card to exactly 90mm width while maintaining aspect ratio
+    # scale the card
     target_width = mm_to_px(90)
     scale_factor = target_width / card.width
     target_height = int(card.height * scale_factor)
@@ -179,18 +179,15 @@ for _, row in data.iterrows():
     )
 
     name_card_images.append(card)
-# combine into A4 sheet
-a4_sheet = Image.new("RGB", (a4_width_px, a4_height_px), "white")
 
-if name_card_images:
-    actual_width = name_card_images[0].width
-    actual_height = name_card_images[0].height
-    
+# combine into A4 sheets
+actual_width = name_card_images[0].width
+actual_height = name_card_images[0].height
+
 num_cards_per_sheet = GRID_ROWS * GRID_COLUMNS
 num_sheets = (len(name_card_images) + num_cards_per_sheet - 1) // num_cards_per_sheet
 
-# calculate margin in pixels
-margin_px = mm_to_px(1)  # 1mm margin
+margin_px = mm_to_px(1)
 
 for sheet_num in range(num_sheets):
     a4_sheet = Image.new("RGB", (a4_width_px, a4_height_px), "white")
